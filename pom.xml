@@ -49,15 +49,7 @@
             <groupId>org.pitest</groupId>
             <artifactId>pitest-maven</artifactId>
             <version>1.5.1</version>
-			<configuration>
-			<reportsDirectory>/target/PitReports</reportsDirectory>
-                <sourceDataFormats>
-                <sourceDataFormat>HTML</sourceDataFormat>
-                </sourceDataFormats>
-                <siteReportName>MY-Pit-Report</siteReportName>
-                <siteReportDescription>PIT Report</siteReportDescription>
-				</configuration>
-				<reportSets>
+            <reportSets>
                 <reportSet>
                     <reports>
                         <report>report</report>
