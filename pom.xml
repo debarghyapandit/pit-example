@@ -26,7 +26,7 @@
       <plugin>
         <groupId>org.pitest</groupId>
                     <artifactId>pitest-maven</artifactId>
-                    <version>1.1.10</version>
+                    <version>1.5.1</version>
                     <configuration>
                     <outputFormats>
                         <outputFormat>XML</outputFormat>
@@ -43,11 +43,7 @@
                     <targetTests>
                         <param>com.projecttest.*</param>
                     </targetTests>
-                        <mutators>
-                        <mutator>CONSTRUCTOR_CALLS</mutator>
-                        <mutator>NON_VOID_METHOD_CALLS</mutator>
-                        </mutators>
-                    <threads>5</threads>
+                      <threads>5</threads>
                     <historyInputLocation>target/pitHistory.txt</historyInputLocation>
                     <historyOutputLocation>target/pitHistory.txt</historyOutputLocation>
                     <timestampedReports>false</timestampedReports>
