@@ -38,6 +38,7 @@
          </avoidCallsTo>
 		<historyInputLocation>target/pitHistory.txt</historyInputLocation>
 		<historyOutputLocation>target/pitHistory.txt</historyOutputLocation>
+		<timestampedReports>false</timestampedReports>
 		<threads>5</threads>
 		</configuration>
       </plugin>
