@@ -25,9 +25,59 @@
     <plugins>
       <plugin>
         <groupId>org.pitest</groupId>
-        <artifactId>pitest-maven</artifactId>
-        <version>1.1.10</version>
-      </plugin>
+                    <artifactId>pitest-maven</artifactId>
+                    <version>1.5.1</version>
+                    <configuration>
+                    <outputFormats>
+                        <outputFormat>XML</outputFormat>
+                        <outputFormat>HTML</outputFormat>
+                    </outputFormats>
+                    <avoidCallsTo>
+                        <avoidCallsTo>org.apache.log4j.*</avoidCallsTo>
+                        <avoidCallsTo>org.slf4j.*</avoidCallsTo>
+                    </avoidCallsTo>
+                    <targetClasses>
+                        <param>com.project.*</param>
+                        <param>com.project.*</param>
+                    </targetClasses>
+                    <targetTests>
+                        <param>com.projecttest.*</param>
+                    </targetTests>
+                        <mutators>
+                        <mutator>CONSTRUCTOR_CALLS</mutator>
+                        <mutator>NON_VOID_METHOD_CALLS</mutator>
+                        </mutators>
+                    <threads>5</threads>
+                    <historyInputLocation>target/pitHistory.txt</historyInputLocation>
+                    <historyOutputLocation>target/pitHistory.txt</historyOutputLocation>
+                    <timestampedReports>false</timestampedReports>
+                    </configuration>
+            </plugin>
     </plugins>
   </build>
+  <reporting>
+    <plugins>
+      <groupId>org.pitest</groupId>
+                        <artifactId>pitest-maven</artifactId>
+                        <version>LATEST</version>
+                        <configuration>
+                            <skip>false</skip>
+                            <reportsDirectory>${project.build.directory}/pit-custom-output-dir</reportsDirectory>
+                            <sourceDataFormats>
+                            <sourceDataFormat>HTML</sourceDataFormat>
+                            </sourceDataFormats>
+                            <siteReportName>my-pit-report-name</siteReportName>
+                            <siteReportDescription>my pit report custom description</siteReportDescription>
+                            <siteReportDirectory>pit-custom-site-directory</siteReportDirectory>
+                            </configuration>
+                            <reportSets>
+                            <reportSet>
+                                <reports>
+                                    <report>report</report>
+                                </reports>
+                            </reportSet>
+                        </reportSets>
+                    </plugin>
+      </plugins>
+    </reporting>
 </project>
